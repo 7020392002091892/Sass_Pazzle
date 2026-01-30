@@ -1,0 +1,24 @@
+@mixin back-ground ($color) {
+  background-color: $color;
+}
+
+@mixin scale($width, $height, $boxsizing) {
+  width: $width;
+  height: $height;
+  box-sizing: $boxsizing;
+}
+
+@mixin boxes($backcolor, $width, $height, $bordersize, $boxcolors: (), $classNames: ()) {
+  @include back-ground($backcolor);
+
+  @each $colorName in $classNames {
+    $index: index($classNames, $colorName);
+
+    &.list_#{$colorName} {
+      flex: 0 0 auto;
+      border: $bordersize solid $backcolor;
+      @include back-ground(nth($boxcolors,$index));
+      @include scale($width, $height, content-box);
+    }
+  }
+}

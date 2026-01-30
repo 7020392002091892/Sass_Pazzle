@@ -1,0 +1,57 @@
+@use 'variable';
+@use 'mixin';
+
+.header {
+  @include mixin.back-ground(variable.$navy);
+  @include mixin.scale(400px, 100px, border-box);
+  padding: 20px 20px 20px 20px;
+
+  &__boxes {
+    margin-left: auto;
+    display: flex;
+    border: 10px solid variable.$white;
+    @include mixin.scale(fit-content, fit-content, border-box);
+    @include mixin.boxes(variable.$white, 40px, 40px, 0px, variable.$buttonColor , variable.$classNames);
+  }
+
+  &__boxes>&__boxes {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.sidebar {
+  display: flex;
+  @include mixin.back-ground(variable.$green);
+  @include mixin.scale(150px, 250px, border-box);
+  flex: 0 0 auto;
+
+}
+
+.main {
+  @include mixin.back-ground(variable.$red);
+  @include mixin.scale(250px, 250px, border-box);
+  padding: 40px 0px 0px 40px;
+  flex: 0 0 auto;
+
+  &__boxes {
+    @include mixin.boxes(variable.$white, 140px, 40px, 5px, variable.$buttonColor, variable.$classNames);
+  }
+
+  &__boxes+&__boxes {
+    margin-top: 10px;
+  }
+
+}
+
+.footer {
+  @include mixin.back-ground(variable.$brown);
+  @include mixin.scale(400px, 100px, border-box);
+}
+
+.wrapper {
+  display: flex;
+}
