@@ -1,0 +1,25 @@
+@mixin back-ground ($color) {
+  background-color: $color;
+  overflow: hidden;
+}
+
+@mixin scale($width, $height, $boxsizing) {
+  width: $width;
+  height: $height;
+  box-sizing: $boxsizing;
+}
+
+@mixin boxes($backcolor, $width, $height, $bordersize, $boxcolors: ()) {
+  @include back-ground($backcolor);
+
+  @each $color in $boxcolors {
+    $index: index($boxcolors, $color);
+
+    &.list_#{$index} {
+      flex: 0 0 auto;
+      border: $bordersize solid $backcolor;
+      @include back-ground($color);
+      @include scale($width, $height, content-box);
+    }
+  }
+}
