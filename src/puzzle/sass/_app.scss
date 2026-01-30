@@ -27,14 +27,15 @@
   display: flex;
   @include mixin.back-ground(variable.$green);
   @include mixin.scale(150px, 250px, border-box);
-  flex-shrink: 0;
+  flex: 0 0 auto;
+
 }
 
 .main {
   @include mixin.back-ground(variable.$red);
   @include mixin.scale(250px, 250px, border-box);
   padding: 40px 0px 0px 40px;
-  flex-shrink: 0;
+  flex: 0 0 auto;
 
   &__boxes {
     @include mixin.boxes(variable.$white, 140px, 40px, 5px, variable.$buttonColor);

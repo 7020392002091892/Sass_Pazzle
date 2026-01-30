@@ -1,6 +1,5 @@
 @mixin back-ground ($color) {
   background-color: $color;
-  overflow: hidden;
 }
 
 @mixin scale($width, $height, $boxsizing) {
