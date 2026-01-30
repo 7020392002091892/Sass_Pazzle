@@ -28,7 +28,6 @@
   @include mixin.back-ground(variable.$green);
   @include mixin.scale(150px, 250px, border-box);
   flex-shrink: 0;
-
 }
 
 .main {
@@ -38,7 +37,6 @@
   flex-shrink: 0;
 
   &__boxes {
-
     @include mixin.boxes(variable.$white, 140px, 40px, 5px, variable.$buttonColor);
   }
 
@@ -51,7 +49,6 @@
 .footer {
   @include mixin.back-ground(variable.$brown);
   @include mixin.scale(400px, 100px, border-box);
-
 }
 
 .wrapper {
