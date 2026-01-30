@@ -8,16 +8,16 @@
   box-sizing: $boxsizing;
 }
 
-@mixin boxes($backcolor, $width, $height, $bordersize, $boxcolors: ()) {
+@mixin boxes($backcolor, $width, $height, $bordersize, $boxcolors: (), $classNames: ()) {
   @include back-ground($backcolor);
 
-  @each $color in $boxcolors {
-    $index: index($boxcolors, $color);
+  @each $colorName in $classNames {
+    $index: index($classNames, $colorName);
 
-    &.list_#{$index} {
+    &.list_#{$colorName} {
       flex: 0 0 auto;
       border: $bordersize solid $backcolor;
-      @include back-ground($color);
+      @include back-ground(nth($boxcolors,$index));
       @include scale($width, $height, content-box);
     }
   }

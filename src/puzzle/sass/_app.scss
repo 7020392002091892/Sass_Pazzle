@@ -11,7 +11,7 @@
     display: flex;
     border: 10px solid variable.$white;
     @include mixin.scale(fit-content, fit-content, border-box);
-    @include mixin.boxes(variable.$white, 40px, 40px, 0px, variable.$buttonColor);
+    @include mixin.boxes(variable.$white, 40px, 40px, 0px, variable.$buttonColor , variable.$classNames);
   }
 
   &__boxes>&__boxes {
@@ -38,7 +38,7 @@
   flex: 0 0 auto;
 
   &__boxes {
-    @include mixin.boxes(variable.$white, 140px, 40px, 5px, variable.$buttonColor);
+    @include mixin.boxes(variable.$white, 140px, 40px, 5px, variable.$buttonColor, variable.$classNames);
   }
 
   &__boxes+&__boxes {
